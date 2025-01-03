@@ -27,7 +27,7 @@ export const getMetaData = async (req, res) => {
         if (metadata) {
             res.status(201).json(metadata);
         } else {
-            res.status(400).json({ error: "Error in fetching metadata" });
+            res.status(200).json({ message: "Metadata for the user DNE" });
         }
     } catch (error) {
         console.log("Error in get metadata", error.message);

@@ -7,12 +7,16 @@ import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 
-import connectToMongoDB from "./db/connectToMongoDB.js";
 import { client } from "./redis/client.js";
+import connectToMongoDB from "./db/connectToMongoDB.js";
+import stripe from "./stripe/stripeInit.js";
+
 import authRoutes from "./routes/auth.routes.js";
-import predictionRoutes from "./routes/predictions.routes.js"; 
+import predictionRoutes from "./routes/predictions.routes.js";
 import elevatedUserRoutes from "./routes/elevatedUser.routes.js";
 import analysisRoutes from "./routes/analysis.routes.js";
+import marketplaceRoutes from "./routes/marketplace.routes.js";
+import paymentRoutes from "./routes/payment.routes.js";
 
 const PORT = process.env.PORT || 5000;
 
@@ -51,6 +55,8 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/predictions", predictionRoutes);
 app.use("/api/v1/elevatedUser", elevatedUserRoutes);
 app.use("/api/v1/dashboard", analysisRoutes);
+app.use("/api/v1/marketplace", marketplaceRoutes);
+app.use("/api/v1/payment", paymentRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on PORT: ${PORT}`);
@@ -61,5 +67,11 @@ app.listen(PORT, () => {
         console.log("Connected to Redis");
     } else {
         console.log("Error in connecting to Redis");
+    }
+
+    if (stripe) {
+        console.log("Stripe Initialized");
+    } else {
+        console.log("Error in connecting to Stripe");
     }
 });
