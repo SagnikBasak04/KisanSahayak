@@ -1,0 +1,170 @@
+{
+  "Corn___Common_Rust": {
+    "disease_details": [
+      "Common rust in corn is caused by the fungus *Puccinia sorghi*.",
+      "It typically occurs in areas with high humidity and moderate temperatures."
+    ],
+    "recommendations": [
+      "Use disease-resistant corn varieties.",
+      "Ensure proper crop rotation and avoid overhead irrigation to reduce leaf wetness."
+    ],
+    "pesticides": [
+      "Mancozeb",
+      "Propiconazole"
+    ]
+  },
+  "Corn___Gray_Leaf_Spot": {
+    "disease_details": [
+      "Gray leaf spot is caused by the fungus *Cercospora zeae-maydis*.",
+      "It causes lesions on leaves that restrict the plant's ability to photosynthesize."
+    ],
+    "recommendations": [
+      "Maintain proper crop rotation and residue management.",
+      "Apply fungicides during the early stages of disease development."
+    ],
+    "pesticides": [
+      "Azoxystrobin",
+      "Pyraclostrobin"
+    ]
+  },
+  "Corn___Northern_Leaf_Blight": {
+    "disease_details": [
+      "Northern leaf blight is caused by the fungus *Exserohilum turcicum*.",
+      "It typically appears as long, elliptical gray-green lesions on the leaves."
+    ],
+    "recommendations": [
+      "Plant resistant hybrids and practice crop rotation.",
+      "Apply fungicides if disease pressure is high."
+    ],
+    "pesticides": [
+      "Mancozeb",
+      "Chlorothalonil"
+    ]
+  },
+  "Potato___Early_Blight": {
+    "disease_details": [
+      "Early blight is caused by the fungus *Alternaria solani*.",
+      "It affects older leaves first, creating concentric rings or lesions."
+    ],
+    "recommendations": [
+      "Use certified, disease-free seed potatoes and rotate crops.",
+      "Ensure good air circulation and avoid overhead irrigation."
+    ],
+    "pesticides": [
+      "Mancozeb",
+      "Chlorothalonil"
+    ]
+  },
+  "Potato___Late_Blight": {
+    "disease_details": [
+      "Late blight is caused by the pathogen *Phytophthora infestans*.",
+      "It is the disease responsible for the Irish potato famine."
+    ],
+    "recommendations": [
+      "Use resistant varieties and certified disease-free seed potatoes.",
+      "Apply fungicides preventively in areas prone to late blight."
+    ],
+    "pesticides": [
+      "Metalaxyl",
+      "Cymoxanil"
+    ]
+  },
+  "Rice___Brown_Spot": {
+    "disease_details": [
+      "Brown spot is caused by the fungus *Bipolaris oryzae*.",
+      "It primarily affects leaves, causing small, brownish oval spots."
+    ],
+    "recommendations": [
+      "Apply balanced fertilizers, especially potassium.",
+      "Practice crop rotation and use resistant varieties."
+    ],
+    "pesticides": [
+      "Mancozeb",
+      "Carbendazim"
+    ]
+  },
+  "Rice___Leaf_Blast": {
+    "disease_details": [
+      "Rice blast is caused by the fungus *Magnaporthe oryzae*.",
+      "It affects leaves and stems, and can lead to severe yield loss."
+    ],
+    "recommendations": [
+      "Use resistant rice varieties and maintain balanced soil fertility.",
+      "Apply fungicides at the first sign of the disease."
+    ],
+    "pesticides": [
+      "Tricyclazole",
+      "Carbendazim"
+    ]
+  },
+  "Rice___Neck_Blast": {
+    "disease_details": [
+      "Neck blast is caused by the fungus *Magnaporthe oryzae*, similar to leaf blast but affects the neck of the rice panicle.",
+      "It can lead to complete grain loss if untreated."
+    ],
+    "recommendations": [
+      "Use resistant varieties and apply nitrogen fertilizers judiciously.",
+      "Apply fungicides at the heading stage to prevent the disease."
+    ],
+    "pesticides": [
+      "Isoprothiolane",
+      "Tricyclazole"
+    ]
+  },
+  "Sugarcane___Bacterial_Blight": {
+    "disease_details": [
+      "Bacterial blight in sugarcane is caused by *Xanthomonas albilineans*.",
+      "It causes yellowish streaks on leaves and affects photosynthesis."
+    ],
+    "recommendations": [
+      "Use disease-free planting material and plant resistant varieties.",
+      "Apply copper-based bactericides if necessary."
+    ],
+    "pesticides": [
+      "Copper oxychloride",
+      "Streptomycin"
+    ]
+  },
+  "Sugarcane___Red_Rot": {
+    "disease_details": [
+      "Red rot is caused by the fungus *Colletotrichum falcatum*.",
+      "It affects the stalks, causing red discoloration and a sour smell."
+    ],
+    "recommendations": [
+      "Plant disease-resistant varieties and avoid waterlogged conditions.",
+      "Rogue infected plants and practice crop rotation."
+    ],
+    "pesticides": [
+      "Carbendazim",
+      "Mancozeb"
+    ]
+  },
+  "Wheat___Brown_Rust": {
+    "disease_details": [
+      "Brown rust, also known as leaf rust, is caused by the fungus *Puccinia triticina*.",
+      "It affects wheat leaves and reduces grain yield and quality."
+    ],
+    "recommendations": [
+      "Plant resistant wheat varieties and monitor fields regularly.",
+      "Apply fungicides at the early signs of the disease."
+    ],
+    "pesticides": [
+      "Propiconazole",
+      "Tebuconazole"
+    ]
+  },
+  "Wheat___Yellow_Rust": {
+    "disease_details": [
+      "Yellow rust, also known as stripe rust, is caused by the fungus *Puccinia striiformis*.",
+      "It appears as yellow pustules on wheat leaves, affecting photosynthesis."
+    ],
+    "recommendations": [
+      "Grow resistant varieties and use balanced fertilizers.",
+      "Apply fungicides preventively in areas prone to rust."
+    ],
+    "pesticides": [
+      "Tebuconazole",
+      "Azoxystrobin"
+    ]
+  }
+}

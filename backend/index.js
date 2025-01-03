@@ -10,6 +10,7 @@ import morgan from "morgan";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { client } from "./redis/client.js";
 import authRoutes from "./routes/auth.routes.js";
+import predictionRoutes from "./routes/predictions.routes.js"; 
 
 const PORT = process.env.PORT || 5000;
 
@@ -45,6 +46,7 @@ app.get("/api/v1", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/predictions", predictionRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on PORT: ${PORT}`);
