@@ -1,3 +1,4 @@
+import { useEnrollmentContext } from "./context/EnrollmentContext";
 import { Navigate, Route, Routes } from "react-router-dom"
 import { useAuthContext } from "./context/AuthContext";
 import { Toaster } from "react-hot-toast";
@@ -18,9 +19,16 @@ import MarketplaceBuy from "./pages/marketplace/MarketplaceBuy";
 import CompletePayment from "./pages/payment/CompletePayment";
 import CancelPayment from "./pages/payment/CancelPayment";
 import Gratitude from "./pages/gratitude/Gratitude";
+import Orders from "./pages/marketplace/Orders";
+import MyListings from "./pages/marketplace/MyListings";
+import MarketplaceSell from "./pages/marketplace/MarketplaceSell";
+import Contribute from "./pages/elevatedUser/gamify/Contribute";
+import GamePage from "./pages/elevatedUser/gamify/GamePage";
+import ImagePage from "./pages/elevatedUser/gamify/ImagePage";
 
 function App() {
   const { authUser } = useAuthContext();
+  const {enrolledUser} = useEnrollmentContext();
 
   return (
     <>
@@ -38,9 +46,21 @@ function App() {
         <Route path="/profile" element={authUser ? <Profile /> : <Navigate to={"/"} />} />
         <Route path="/marketplace" element={authUser ? <MarketPlace /> : <Navigate to={"/"} />} />
         <Route path="/marketplace/buy/:id" element={authUser ? <MarketplaceBuy /> : <Navigate to={"/"} />} exact />
+        <Route path="/marketplace/sell" element={authUser ? <MarketplaceSell /> : <Navigate to={"/"} />} />
+        <Route path="/marketplace/my-listings" element={authUser ? <MyListings /> : <Navigate to={"/"} />} />
+        <Route path="/marketplace/orders" element={authUser ? <Orders /> : <Navigate to={"/"} />} />
         <Route path="/complete-order" element={authUser ? <CompletePayment /> : <Navigate to={"/"} />} />
-          <Route path="/cancel-order" element={authUser ? <CancelPayment /> : <Navigate to={"/"} />} />
-          <Route path="/gratitude" element={authUser ? <Gratitude /> : <Navigate to={"/"} />} />
+        <Route path="/cancel-order" element={authUser ? <CancelPayment /> : <Navigate to={"/"} />} />
+        <Route path="/gratitude" element={authUser ? <Gratitude /> : <Navigate to={"/"} />} />
+        <Route path="/elevated-user/contribute" element={authUser ? <Contribute /> : <Navigate to={"/"} />} />
+          <Route
+            path="/elevated-user/play"
+            element={authUser ? (enrolledUser ? <GamePage /> : <Navigate to="/elevated-user/contribute" />) : <Navigate to="/" />}
+          />
+          <Route
+            path="/elevated-user/images"
+            element={authUser ? (enrolledUser ? <ImagePage /> : <Navigate to="/elevated-user/contribute" />) : <Navigate to="/" />}
+          />
 
         <Route path="*" element={authUser ? <Navigate to="/home" /> : <Navigate to="/" />} />
       </Routes>
