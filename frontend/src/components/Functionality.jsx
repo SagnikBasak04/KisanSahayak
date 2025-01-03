@@ -45,42 +45,42 @@ const Functionality = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-4xl justify-items-center"
         ref={buttonContainerRef}
       >
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/upload" className="w-full block text-center">
             Upload
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/capture" className="w-full block text-center">
             Capture
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/dashboard" className="w-full block text-center">
             Dashboard
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/marketplace" className="w-full block text-center">
             Marketplace
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/history" className="w-full block text-center">
             My History
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/elevated-user/contribute" className="w-full block text-center">
             Contribute
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/profile" className="w-full block text-center">
             Profile
           </Link>
         </button>
-        <button className="primary-button-new w-full">
+        <button className="primary-button-new w-full text-black">
           <Link to="/info" className="w-full block text-center">
             Details & Info
           </Link>

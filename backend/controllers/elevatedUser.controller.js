@@ -34,3 +34,19 @@ export const getMetaData = async (req, res) => {
         res.status(500).json({ error: "Internal Server error" });
     }
 }
+
+export const isElevatedUser = async (req, res) => {
+    try {
+        const user = await Metadata.findOne({ user: req.user._id });
+
+        if (user) {
+            if (user.totalGP >= parseFloat(200)) return res.status(200).json({ elevatedUser: true });
+            else return res.status(200).json({ elevatedUser: false });
+        } else {
+            return res.status(200).json({ message: "User not enrolled. Enroll first" });
+        }
+    } catch (error) {
+        console.log("Error in getting Elevated User", error);
+        res.status(500).json({ error: "Internal Server error" });
+    }
+}

@@ -13,6 +13,11 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import PersonalDashboard from "./pages/dashboard/PersonalDashboard";
 import RegionalDashboard from "./pages/dashboard/RegionalDashboard";
 import Profile from "./pages/profile/Profile";
+import MarketPlace from "./pages/marketplace/Marketplace";
+import MarketplaceBuy from "./pages/marketplace/MarketplaceBuy";
+import CompletePayment from "./pages/payment/CompletePayment";
+import CancelPayment from "./pages/payment/CancelPayment";
+import Gratitude from "./pages/gratitude/Gratitude";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -31,6 +36,11 @@ function App() {
         <Route path="/dashboard/personal" element={authUser ? <PersonalDashboard /> : <Navigate to={"/"} />} />
         <Route path="/dashboard/:district" element={authUser ? <RegionalDashboard /> : <Navigate to={"/"} />} />
         <Route path="/profile" element={authUser ? <Profile /> : <Navigate to={"/"} />} />
+        <Route path="/marketplace" element={authUser ? <MarketPlace /> : <Navigate to={"/"} />} />
+        <Route path="/marketplace/buy/:id" element={authUser ? <MarketplaceBuy /> : <Navigate to={"/"} />} exact />
+        <Route path="/complete-order" element={authUser ? <CompletePayment /> : <Navigate to={"/"} />} />
+          <Route path="/cancel-order" element={authUser ? <CancelPayment /> : <Navigate to={"/"} />} />
+          <Route path="/gratitude" element={authUser ? <Gratitude /> : <Navigate to={"/"} />} />
 
         <Route path="*" element={authUser ? <Navigate to="/home" /> : <Navigate to="/" />} />
       </Routes>

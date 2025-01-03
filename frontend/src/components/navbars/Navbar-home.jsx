@@ -68,7 +68,7 @@ const Navbar = () => {
         <a onClick={() => navigate("/marketplace")} href="">
           <BsCart2 className="navbar-cart-icon" />
         </a>
-        <button onClick={logout} className="primary-button">Logout</button>
+        <button onClick={logout} className="primary-button text-black">Logout</button>
       </div>
       <div className="navbar-menu-container md:hidden">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />

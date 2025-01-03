@@ -67,7 +67,7 @@ const Navbar = () => {
                 <Link to="/dashboard">Dashboard</Link>
                 <Link to="/history">History</Link>
                 <Link to="/marketplace"><BsCart2 /></Link>
-                <button onClick={logout} className="primary-button">Logout</button>
+                <button onClick={logout} className="primary-button text-black">Logout</button>
             </div>
             <div className="navbar-menu-container md:hidden">
                 <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
