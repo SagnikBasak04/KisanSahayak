@@ -29,12 +29,12 @@
     "react-select": "^5.9.0",
     "react-slick": "^0.30.3",
     "react-three-fiber": "^6.0.13",
-    "react-tsparticles": "^2.12.2",
+    "react-tsparticles": "^2.12.0",
     "react-webcam": "^7.2.0",
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "three": "^0.172.0",
-    "tsparticles": "^3.7.1",
+    "tsparticles": "^2.12.0",
     "vite-plugin-commonjs": "^0.10.4"
   },
   "devDependencies": {
