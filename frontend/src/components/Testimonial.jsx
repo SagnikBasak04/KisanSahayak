@@ -1,4 +1,4 @@
-import ProfilePic from "../assets/john-doe-image.png";
+import ProfilePic from "../../public/john-doe-image.png";
 import { AiFillStar } from "react-icons/ai";
 import { useEffect } from "react";
 import AOS from "aos";
@@ -152,7 +152,7 @@ const Testimonial = () => {
       </div>
       <Slider {...settings}>
       {TestimonialData.map((data, _idx) => (
-          <div className="testimonial-section-bottom">
+          <div key={_idx} className="testimonial-section-bottom">
             <img src={data.image} alt={_idx} />
             <p>{data.review}</p>
             <div className="testimonials-stars-container">

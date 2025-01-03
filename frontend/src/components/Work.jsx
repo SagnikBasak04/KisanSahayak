@@ -1,6 +1,6 @@
-import Camera from "../assets/camera-clip-art-orange.png";
-import LookingGlass from "../assets/looking-glass-work.png";
-import BarGraph from "../assets/bar-graph.png";
+import Camera from "../../public/camera-clip-art-orange.png";
+import LookingGlass from "../../public/looking-glass-work.png";
+import BarGraph from "../../public/bar-graph.png";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";

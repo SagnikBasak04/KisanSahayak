@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import AboutBackground from "../assets/about-background.png";
-import AboutBackgroundImage from "../assets/looking-glass.png";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,10 +11,10 @@ const About = () => {
   return (
     <div className="about-section-container" data-aos="fade-up" id="about-section-container">
       <div className="about-background-image-container">
-        <img src={AboutBackground} alt="" />
+        <img src="/about-background.png" alt="bg" />
       </div>
       <div className="about-section-image-container">
-        <img src={AboutBackgroundImage} alt="" />
+        <img src="/looking-glass.png" alt="bg" />
       </div>
       <div className="about-section-text-container">
         <p className="primary-subheading">About</p>

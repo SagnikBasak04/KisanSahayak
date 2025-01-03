@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../assets/KisanSahayak.png";
+import Logo from "../../../public/KisanSahayak.png";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
