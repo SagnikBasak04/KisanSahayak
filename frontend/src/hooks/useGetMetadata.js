@@ -7,7 +7,7 @@ const useGetMetadata = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
     const { setEnrolledUser } = useEnrollmentContext();
 
-    const metadata = async (id) => {
+    const metadata = async () => {
         setLoading(true);
         try {
             const res = await fetch(`${apiUrl}/elevatedUser/get-metadata`, {
