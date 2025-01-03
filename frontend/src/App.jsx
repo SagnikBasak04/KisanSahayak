@@ -28,6 +28,7 @@ import GamePage from "./pages/elevatedUser/gamify/GamePage";
 import ImagePage from "./pages/elevatedUser/gamify/ImagePage";
 import Records from "./pages/elevatedUser/records/Records";
 import Update from "./pages/elevatedUser/update/Update";
+import Info from "./pages/info/Info";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -101,6 +102,7 @@ function App() {
               )
             }
           />
+          <Route path="/info" element={authUser ? <Info /> : <Navigate to={"/"} />} />
 
         <Route path="*" element={authUser ? <Navigate to="/home" /> : <Navigate to="/" />} />
       </Routes>
