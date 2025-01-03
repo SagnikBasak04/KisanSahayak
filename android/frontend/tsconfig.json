@@ -1,0 +1,9 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "resolveJsonModule": true, // Enable JSON imports
+    "esModuleInterop": true,
+    "strict": true
+  }
+}
