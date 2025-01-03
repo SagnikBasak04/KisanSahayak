@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { useAuthContext } from "./context/AuthContext";
+import { Toaster } from "react-hot-toast";
 
 import Landing from "./pages/landing/Landing";
 import Home from "./pages/home/Home";
@@ -9,6 +10,9 @@ import Upload from "./pages/upload/Upload";
 import Capture from "./pages/upload/Capture";
 import History from "./pages/history/History";
 import Dashboard from "./pages/dashboard/Dashboard";
+import PersonalDashboard from "./pages/dashboard/PersonalDashboard";
+import RegionalDashboard from "./pages/dashboard/RegionalDashboard";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -24,7 +28,14 @@ function App() {
         <Route path="/upload" element={authUser ? <Upload /> : <Navigate to={"/"} />} />
         <Route path="/history" element={authUser ? <History /> : <Navigate to={"/"} />} />
         <Route path="/dashboard" element={authUser ? <Dashboard /> : <Navigate to={"/"} />} />
+        <Route path="/dashboard/personal" element={authUser ? <PersonalDashboard /> : <Navigate to={"/"} />} />
+        <Route path="/dashboard/:district" element={authUser ? <RegionalDashboard /> : <Navigate to={"/"} />} />
+        <Route path="/profile" element={authUser ? <Profile /> : <Navigate to={"/"} />} />
+
+        <Route path="*" element={authUser ? <Navigate to="/home" /> : <Navigate to="/" />} />
       </Routes>
+
+      <Toaster />
     </>
   )
 }
