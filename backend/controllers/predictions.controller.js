@@ -2,6 +2,8 @@ import Prediction from "../models/predictions.model.js";
 import { client } from "../redis/client.js";
 
 export const uploadAndPredict = async (req, res) => {
+    const apiUrl = process.env.ML_URL;
+
     try {
         const {
             userId,
@@ -18,7 +20,7 @@ export const uploadAndPredict = async (req, res) => {
             hum,
         } = req.body;
 
-        const response = await fetch("http://127.0.0.1:8000/predict", {
+        const response = await fetch(`${apiUrl}/predict`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
