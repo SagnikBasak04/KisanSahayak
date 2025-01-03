@@ -11,6 +11,7 @@ export type RootStackParamList = {
   PersonalizedDashboard: undefined;
   OthersDashboard: undefined;
   RegionalDashboard: { district: string };
+  Contribute: undefined;
 };
 
 export type Product = {

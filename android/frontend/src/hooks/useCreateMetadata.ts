@@ -28,11 +28,13 @@ const useCreateMetadata = () => {
 
             if (data) {
                 await AsyncStorage.setItem("KS-enrolledUser", JSON.stringify(data));
+                const user = await AsyncStorage.getItem("KS-enrolledUser");
+                console.log(user);
                 setEnrolledUser(data);
                 // toast.success("Enrolled successfully");
             }
         } catch (error) {
-            // toast.error(error.message);
+            console.log(error);
         } finally {
             setLoading(false);
         }

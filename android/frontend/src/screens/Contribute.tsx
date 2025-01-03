@@ -8,10 +8,9 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from "react-native";
-import { FaCheck } from "react-icons/fa";
-import { RiCloseLargeFill } from "react-icons/ri";
-import { VscGraph } from "react-icons/vsc";
-import { MdEnergySavingsLeaf } from "react-icons/md";
+import Icon from "react-native-vector-icons/FontAwesome";
+import MaterialIcon from "react-native-vector-icons/MaterialIcons";
+import Ionicon from "react-native-vector-icons/Ionicons";
 import { useEnrollmentContext } from "../context/EnrollmentContext";
 import { useElevatedUserContext } from "../context/ElevatedUserContext";
 import useCreateMetadata from "../hooks/useCreateMetadata";
@@ -42,25 +41,28 @@ const Contribute = () => {
         <>
           <View style={styles.statsContainer}>
             <View style={[styles.statBox, { backgroundColor: "#A7F3D0" }]}>
-              <FaCheck style={[styles.icon, { color: "#065F46" }]} />
+              <Icon name="check" style={[styles.icon, { color: "#065F46" }]} />
               <Text style={[styles.statText, { color: "#065F46" }]}>
                 {enrolledUser?.correct}
               </Text>
             </View>
             <View style={[styles.statBox, { backgroundColor: "#FECACA" }]}>
-              <RiCloseLargeFill style={[styles.icon, { color: "#991B1B" }]} />
+              <Ionicon name="close-circle" style={[styles.icon, { color: "#991B1B" }]} />
               <Text style={[styles.statText, { color: "#991B1B" }]}>
                 {enrolledUser?.incorrect}
               </Text>
             </View>
             <View style={[styles.statBox, { backgroundColor: "#D1D5DB" }]}>
-              <VscGraph style={[styles.icon, { color: "#374151" }]} />
+              <Ionicon name="stats-chart" style={[styles.icon, { color: "#374151" }]} />
               <Text style={[styles.statText, { color: "#374151" }]}>
                 {accuracyCalc()}%
               </Text>
             </View>
             <View style={[styles.statBox, { backgroundColor: "#FDE68A" }]}>
-              <MdEnergySavingsLeaf style={[styles.icon, { color: "#065F46" }]} />
+              <MaterialIcon
+                name="eco"
+                style={[styles.icon, { color: "#065F46" }]}
+              />
               <Text style={[styles.statText, { color: "#065F46" }]}>
                 {enrolledUser?.greenPoints.toFixed(2)}
               </Text>
