@@ -61,14 +61,50 @@ const Navbar = () => {
                 <img src={Logo} alt="" className="h-[30px] w-full" />
             </div>
             <div className="navbar-links-container hidden md:flex ml-4">
-                <Link to="/home">Home</Link>
-                <Link to="/upload">Upload</Link>
-                <Link to="/capture">Capture</Link>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/history">History</Link>
-                <Link to="/marketplace"><BsCart2 /></Link>
-                <button onClick={logout} className="primary-button text-black">Logout</button>
+                <Link
+                    to="/home"
+                    className="relative inline-block px-3 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:after:bg-orange-500 hover:text-orange-500"
+                >
+                    Home
+                </Link>
+                <Link
+                    to="/upload"
+                    className="relative inline-block px-3 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:after:bg-orange-500 hover:text-orange-500"
+                >
+                    Upload
+                </Link>
+                <Link
+                    to="/capture"
+                    className="relative inline-block px-3 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:after:bg-orange-500 hover:text-orange-500"
+                >
+                    Capture
+                </Link>
+                <Link
+                    to="/dashboard"
+                    className="relative inline-block px-3 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:after:bg-orange-500 hover:text-orange-500"
+                >
+                    Dashboard
+                </Link>
+                <Link
+                    to="/history"
+                    className="relative inline-block px-3 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:after:bg-orange-500 hover:text-orange-500"
+                >
+                    History
+                </Link>
+                <Link
+                    to="/marketplace"
+                    className="hover:text-orange-500"
+                >
+                    <BsCart2 />
+                </Link>
+                <button
+                    onClick={logout}
+                    className="primary-button text-black"
+                >
+                    Logout
+                </button>
             </div>
+
             <div className="navbar-menu-container md:hidden">
                 <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
             </div>
