@@ -13,7 +13,7 @@ const ParticlesContainer = () =>{
     },[]);
 
     return(
-        <Particles className='w-full h-full absolute particles-container' id='tsparticles' init={particlesInit} loaded={particlesLoaded} 
+        <Particles className='w-screen min-h-screen absolute particles-container' id='tsparticles' init={particlesInit} loaded={particlesLoaded} 
         options={{
             fullscreen : {enable:false},
             background : {
