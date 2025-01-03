@@ -1,25 +1,30 @@
-import React, {useEffect,useRef} from 'react'
-const TranslateComponent=()=>{
+import React, { useEffect, useRef } from 'react';
+
+const Translate = () => {
     const googleTranslateRef = useRef(null);
 
-    useEffect(()=>{
+    useEffect(() => {
         let intervalId;
-        const checkGoogleTranslate=()=>{
-        if (window.google && window.google.translate){
-            clearInterval(intervalId);
-            new window.google.translate.TranslateElement(
-                {pageLanguage:'en',layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE},
-                googleTranslateRef.current
+        const checkGoogleTranslate = () => {
+            if (window.google && window.google.translate) {
+                clearInterval(intervalId);
+                new window.google.translate.TranslateElement(
+                    { pageLanguage: 'en', layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE },
+                    googleTranslateRef.current
                 );
-        }
-    };
-    intervalId=setInterval(checkGoogleTranslate,100);
-    },[]);
-    return(
+                console.log("Ref inside useEffect:", googleTranslateRef.current); // Log after initialization
+            }
+        };
+        intervalId = setInterval(checkGoogleTranslate, 100);
+
+        return () => clearInterval(intervalId); // Cleanup interval on unmount
+    }, []);
+
+    return (
         <div>
             <div ref={googleTranslateRef}></div>
         </div>
     );
 };
 
-export default TranslateComponent;
+export default Translate;
