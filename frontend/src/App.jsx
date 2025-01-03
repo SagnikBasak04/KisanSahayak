@@ -7,6 +7,8 @@ import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/Signup";
 import Upload from "./pages/upload/Upload";
 import Capture from "./pages/upload/Capture";
+import History from "./pages/history/History";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -20,6 +22,8 @@ function App() {
         <Route path="/home" element={authUser ? <Home /> : <Navigate to={"/"} />} />
         <Route path="/capture" element={authUser ? <Capture /> : <Navigate to={"/"} />} />
         <Route path="/upload" element={authUser ? <Upload /> : <Navigate to={"/"} />} />
+        <Route path="/history" element={authUser ? <History /> : <Navigate to={"/"} />} />
+        <Route path="/dashboard" element={authUser ? <Dashboard /> : <Navigate to={"/"} />} />
       </Routes>
     </>
   )
