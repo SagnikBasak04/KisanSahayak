@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../../components/navbars/Navbar-actions";
 import useGetMyHistory from "../../hooks/useGetMyHistory";
-import Spinner from "../../components/Spinner";
 import HistoryCard from "../../components/HistoryCard";
 import gsap from "gsap";
 import Spinner2 from "../../components/Spinner2";
