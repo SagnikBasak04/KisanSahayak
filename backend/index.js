@@ -17,6 +17,7 @@ import elevatedUserRoutes from "./routes/elevatedUser.routes.js";
 import analysisRoutes from "./routes/analysis.routes.js";
 import marketplaceRoutes from "./routes/marketplace.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
 
 const PORT = process.env.PORT || 5000;
 
@@ -57,6 +58,7 @@ app.use("/api/v1/elevatedUser", elevatedUserRoutes);
 app.use("/api/v1/dashboard", analysisRoutes);
 app.use("/api/v1/marketplace", marketplaceRoutes);
 app.use("/api/v1/payment", paymentRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on PORT: ${PORT}`);
