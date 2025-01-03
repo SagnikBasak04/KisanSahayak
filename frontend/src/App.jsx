@@ -1,6 +1,7 @@
-import { useEnrollmentContext } from "./context/EnrollmentContext";
 import { Navigate, Route, Routes } from "react-router-dom"
 import { useAuthContext } from "./context/AuthContext";
+import { useEnrollmentContext } from "./context/EnrollmentContext";
+import { useElevatedUserContext } from "./context/ElevatedUserContext";
 import { Toaster } from "react-hot-toast";
 
 import Landing from "./pages/landing/Landing";
@@ -25,10 +26,13 @@ import MarketplaceSell from "./pages/marketplace/MarketplaceSell";
 import Contribute from "./pages/elevatedUser/gamify/Contribute";
 import GamePage from "./pages/elevatedUser/gamify/GamePage";
 import ImagePage from "./pages/elevatedUser/gamify/ImagePage";
+import Records from "./pages/elevatedUser/records/Records";
+import Update from "./pages/elevatedUser/update/Update";
 
 function App() {
   const { authUser } = useAuthContext();
-  const {enrolledUser} = useEnrollmentContext();
+  const { enrolledUser } = useEnrollmentContext();
+  const { elevatedUser } = useElevatedUserContext();
 
   return (
     <>
@@ -53,13 +57,49 @@ function App() {
         <Route path="/cancel-order" element={authUser ? <CancelPayment /> : <Navigate to={"/"} />} />
         <Route path="/gratitude" element={authUser ? <Gratitude /> : <Navigate to={"/"} />} />
         <Route path="/elevated-user/contribute" element={authUser ? <Contribute /> : <Navigate to={"/"} />} />
-          <Route
-            path="/elevated-user/play"
-            element={authUser ? (enrolledUser ? <GamePage /> : <Navigate to="/elevated-user/contribute" />) : <Navigate to="/" />}
+        <Route
+          path="/elevated-user/play"
+          element={authUser ? (enrolledUser ? <GamePage /> : <Navigate to="/elevated-user/contribute" />) : <Navigate to="/" />}
+        />
+        <Route
+          path="/elevated-user/images"
+          element={authUser ? (enrolledUser ? <ImagePage /> : <Navigate to="/elevated-user/contribute" />) : <Navigate to="/" />}
+        />
+        <Route
+            path="/elevated-user/records"
+            element={
+              authUser ? (
+                enrolledUser ? (
+                  elevatedUser ? (
+                    <Records />
+                  ) : (
+                    <Navigate to="/elevated-user/contribute" />
+                  )
+                ) : (
+                  <Navigate to="/" />
+                )
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           />
           <Route
-            path="/elevated-user/images"
-            element={authUser ? (enrolledUser ? <ImagePage /> : <Navigate to="/elevated-user/contribute" />) : <Navigate to="/" />}
+            path="/elevated-user/record/:id"
+            element={
+              authUser ? (
+                enrolledUser ? (
+                  elevatedUser ? (
+                    <Update />
+                  ) : (
+                    <Navigate to="/elevated-user/contribute" />
+                  )
+                ) : (
+                  <Navigate to="/" />
+                )
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           />
 
         <Route path="*" element={authUser ? <Navigate to="/home" /> : <Navigate to="/" />} />

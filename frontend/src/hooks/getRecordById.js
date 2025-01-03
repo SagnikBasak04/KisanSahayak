@@ -1,16 +1,14 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useAuthContext } from "../context/AuthContext";
 
-const useGetIsElevatedUser = () => {
-    const [loading, setLoading] = useState(false);
+const useGetRecordById = () => {
+    const [loading, setLoading] = useState();
     const apiUrl = import.meta.env.VITE_API_URL;
-    const { authUser } = useAuthContext();
 
-    const isElevatedUser = async (id) => {
+    const record = async (id) => {
         setLoading(true);
         try {
-            const res = await fetch(`${apiUrl}/elevatedUser/isElevatedUser/${authUser._id}`, {
+            const res = await fetch(`${apiUrl}/predictions/records/${id}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -23,15 +21,15 @@ const useGetIsElevatedUser = () => {
                 throw new Error(data.error);
             }
 
-            return data.elevatedUser;
+            return data;
         } catch (error) {
-            //toast.error(error.message);
+            toast.error(error.message);
             console.log(error);
         } finally {
             setLoading(false);
         }
     }
-    return { loading, isElevatedUser }
+    return { loading, record }
 }
 
-export default useGetIsElevatedUser;
+export default useGetRecordById;

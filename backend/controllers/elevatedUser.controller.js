@@ -194,7 +194,7 @@ export const createImage = async (req, res) => {
 
 export const isElevatedUser = async (req, res) => {
     try {
-        const user = await Metadata.findOne({ user: req.user._id });
+        const user = await Metadata.findOne({ user: req.params.id });
 
         if (user) {
             if (user.totalGP >= parseFloat(200)) return res.status(200).json({ elevatedUser: true });

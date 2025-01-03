@@ -12,6 +12,6 @@ router.get("/get-metadata", verifyToken, getMetaData);
 router.get("/get-images", verifyToken, verifyUser, getImageFromBuckets);
 router.patch("/update-metadata/:id", verifyToken, verifyUser, updateMetadata);
 router.post("/create-image", verifyToken, verifyUser, createImage);
-router.get("/isElevatedUser", verifyToken, isElevatedUser);
+router.get("/isElevatedUser/:id", isElevatedUser);
 
 export default router;
