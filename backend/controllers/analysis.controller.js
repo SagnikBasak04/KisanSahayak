@@ -2,6 +2,8 @@ import Prediction from "../models/predictions.model.js";
 import { client } from "../redis/client.js";
 
 export const analysis = async (req, res) => {
+    const apiUrl = process.env.ML_URL;
+
     try {
         const { rain, soil_N, soil_K, soil_P, soil_pH, temp, hum } = req.body;
         const id = req.params.id;
@@ -12,7 +14,7 @@ export const analysis = async (req, res) => {
             return res.status(200).json(JSON.parse(cacheValue));
         }
 
-        const response = await fetch("http://127.0.0.1:8000/analysis", {
+        const response = await fetch(`${apiUrl}/analysis`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

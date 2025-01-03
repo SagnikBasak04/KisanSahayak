@@ -67,8 +67,8 @@ const Layout = () => {
                   alignItems: "center",
                 }}>
                 <div>
-                  <h1 style={{fontFamily:"Poppins"}}>Google Translate</h1>
                   <div>
+                    <h1 style={{fontFamily:"Poppins"}}>Google Translate</h1>
                     <Translate />
                   </div>
                 </div>
