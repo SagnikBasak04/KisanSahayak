@@ -61,11 +61,6 @@ const Info = () => {
             </div>
           </section>
         </main>
-        <div className="bg-orange-500 text-white py-6 absolute bottom-0 w-full">
-          <div className="container mx-auto text-center">
-            <p className="font-semibold">&copy; 2025 KisanSahayak. All Rights Reserved.</p>
-          </div>
-        </div>
       </div>
     </>
   );
