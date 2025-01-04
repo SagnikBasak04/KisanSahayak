@@ -40,7 +40,7 @@ export const analysis = async (req, res) => {
             res.status(400).json({ error: "Invalid parameters" });
         }
     } catch (err) {
-        console.log("Error in Generating Predictions", err.message);
+        console.log("Error in Generating Predictions", err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 }

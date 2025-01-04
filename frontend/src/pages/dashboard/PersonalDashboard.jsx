@@ -75,7 +75,7 @@ const PersonalDashboard = () => {
 							<div className="w-1/2">
 								<span className="font-semibold text-lg">Most Suitable Crops you can Grow</span>
 								<ul className="pl-2 pt-2 list-disc list-inside">
-									{analysisData.predictions.crops.map((crop, idx) => (
+									{analysisData?.predictions?.crops.map((crop, idx) => (
 										<li key={idx}>{crop}</li>
 									))}
 								</ul>
@@ -84,7 +84,7 @@ const PersonalDashboard = () => {
 							<div className="w-1/2">
 								<span className="font-semibold text-lg">Diseases your crops are most prone to</span>
 								<ul className="pl-2 pt-2 list-disc list-inside">
-									{analysisData.predictions.diseases.map((disease, idx) => (
+									{analysisData?.predictions?.diseases.map((disease, idx) => (
 										<li key={idx}>{disease}</li>
 									))}
 								</ul>
