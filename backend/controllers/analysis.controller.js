@@ -81,10 +81,12 @@ export const analysis2 = async (req, res) => {
 };
 
 export const analysis3 = async (req, res) => {
+    const apiUrl = process.env.ML_URL;
+    
     try {
         const { rain, soil_N, soil_K, soil_P, soil_pH, temp, hum } = req.body;
 
-        const response = await fetch("http://127.0.0.1:8000/analysis", {
+        const response = await fetch(`${apiUrl}/analysis`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
