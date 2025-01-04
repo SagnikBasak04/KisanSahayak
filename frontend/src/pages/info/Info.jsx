@@ -1,4 +1,7 @@
 import Navbar from "../../components/navbars/Navbar-actions";
+import marketplaceSS from "../../../public/marketplace_ss.png"
+import diseaseSS from "../../../public/disease-pred-ss.png"
+import managementSS from "../../../public/crop-management-ss.png"
 
 const Info = () => {
   return (
@@ -19,7 +22,7 @@ const Info = () => {
                 recommends pesticides.
               </p>
               <img
-                src="path-to-your-image.jpg"
+                src={diseaseSS}
                 alt="Disease Detection"
                 className="mt-4 rounded-lg border border-gray-300"
               />
@@ -35,7 +38,7 @@ const Info = () => {
                 region-specific recommendations and weather forecasts.
               </p>
               <img
-                src="path-to-your-image.jpg"
+                src={managementSS}
                 alt="Crop Management"
                 className="mt-4 rounded-lg border border-gray-300"
               />
@@ -51,7 +54,7 @@ const Info = () => {
                 marketplace to sell your produce at fair prices.
               </p>
               <img
-                src="path-to-your-image.jpg"
+                src={marketplaceSS}
                 alt="Marketplace"
                 className="mt-4 rounded-lg border border-gray-300"
               />
