@@ -165,7 +165,6 @@ export const getSuggestions = async (req, res) => {
     try {
         const loggedInUser = req.params.id;
         const { keys } = req.body;
-        console.log(keys);
         const products = await Product.find({ seller: { $ne: loggedInUser } });
 
         const filteredProducts = products.filter((product) =>
@@ -173,7 +172,7 @@ export const getSuggestions = async (req, res) => {
                 product.product_name.toLowerCase().includes(key.toLowerCase())
             )
         );
-        console.log(filteredProducts);
+
         res.status(200).json(filteredProducts);
     } catch (err) {
         console.log(err.message)

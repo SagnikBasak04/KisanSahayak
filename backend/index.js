@@ -1,3 +1,4 @@
+import "./sentry/instrument.js";
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
@@ -6,6 +7,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import morgan from "morgan";
+import * as Sentry from "@sentry/node";
 
 import { client } from "./redis/client.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
@@ -47,6 +49,13 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: '1000mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '1000mb', extended: true }))
 app.use(cookieParser());
+
+// Sentry setup
+app.get("/debug-sentry", function mainHandler(req, res) {
+    throw new Error("My first Sentry error!");
+});
+
+Sentry.setupExpressErrorHandler(app);
 
 app.get("/api/v1", (req, res) => {
     res.send("<h1>Server Up & Running</h1>");
