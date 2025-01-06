@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Logo from "../../../public/KisanSahayak.png";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -58,7 +57,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-logo-container">
-        <img src={Logo} alt="logo" className="h-[30px] w-full" />
+        <img src="/KisanSahayak.png" alt="logo" className="h-[30px] w-full" />
       </div>
       <div className="navbar-links-container hidden md:flex ml-4">
         <a href="" className="relative inline-block px-3 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:after:bg-orange-500 hover:text-orange-500">Welcome</a>

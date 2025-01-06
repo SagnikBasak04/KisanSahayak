@@ -3,7 +3,6 @@ import useGetSuggestion from "../hooks/useGetSuggestions"
 import Spinner from "./Spinner";
 import ItemCard from "./ItemCard";
 
-/* eslint-disable react/prop-types */
 const Suggestions = ({ keys }) => {
 	const { loading, suggestions } = useGetSuggestion();
 	const [products, setProducts] = useState([]);

@@ -1,6 +1,3 @@
-import Camera from "../../public/camera-clip-art-orange.png";
-import LookingGlass from "../../public/looking-glass-work.png";
-import BarGraph from "../../public/bar-graph.png";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,17 +9,17 @@ const Work = () => {
   }, []);
   const workInfoData = [
     {
-      image: Camera,
+      image: "/camera-clip-art-orange.png",
       title: "Upload or Capture Image",
       text: "SignUp and upload or capture image of diseased crop to our website.",
     },
     {
-      image: LookingGlass,
+      image: "/looking-glass-work.png",
       title: "Prediction",
       text: "Accurate prediction of the possible diseases considering soil and rainfall conditions of your location",
     },
     {
-      image: BarGraph,
+      image: "/bar-graph.png",
       title: "Solution",
       text: "Real and effective solution to the predicted disease.",
     },

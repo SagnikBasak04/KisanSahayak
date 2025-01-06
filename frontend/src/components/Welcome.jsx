@@ -1,4 +1,3 @@
-import BannerImage from "../../public/tutorial.gif";
 import Typewriter from 'typewriter-effect';
 import getSalutation from "../utils/getSalutation";
 import { useAuthContext } from "../context/AuthContext";
@@ -31,7 +30,7 @@ const Welcome = () => {
           </p>
         </div>
         <div className="home-image-section">
-          <img src={BannerImage} alt="" />
+          <img src="/tutorial.gif" alt="tutorial" />
         </div>
       </div>
   );
