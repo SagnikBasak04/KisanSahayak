@@ -4,7 +4,8 @@ import numpy as np
 import urllib
 import os
 import cv2
-
+from sklearn.metrics import accuracy
+import torch.nn as F
 
 import torch
 from torchvision.transforms import ToTensor
