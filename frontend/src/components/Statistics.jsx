@@ -1,10 +1,3 @@
-import Stat1 from "../../public/Stat1.jpg";
-import Stat2 from "../../public/Stat2.jpg";
-import Stat3 from "../../public/Stat3.jpg";
-import Stat4 from "../../public/Stat4.jpg";
-import Stat5 from "../../public/Stat5.jpg";
-import Stat6 from "../../public/Stat6.jpg";
-import Stat7 from "../../public/Stat7.jpg";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -43,19 +36,19 @@ const Testimonial = () => {
 
   const TestimonialData = [
     {
-      image: Stat1
+      image: "/Stat1.jpg"
     }, {
-      image: Stat2
+      image: "/Stat2.jpg"
     }, {
-      image: Stat3
+      image: "Stat3.jpg"
     }, {
-      image: Stat4
+      image: "Stat4.jpg"
     }, {
-      image: Stat5
+      image: "Stat5.jpg"
     }, {
-      image: Stat6
+      image: "Stat6.jpg"
     }, {
-      image: Stat7
+      image: "Stat7.jpg"
     }
   ];
 

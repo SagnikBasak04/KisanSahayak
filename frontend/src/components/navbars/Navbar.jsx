@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Logo from "../../../public/KisanSahayak.png";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -45,7 +44,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-logo-container">
-        <img src={Logo} alt="" style={{ width: "90%", height: "30px" }} />
+        <img src="/KisanSahayak.png" alt="logo" style={{ width: "90%", height: "30px" }} />
       </div>
       <div className="navbar-links-container hidden md:flex ml-4">
         <a href="">Home</a>
