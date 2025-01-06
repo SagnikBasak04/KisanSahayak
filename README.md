@@ -38,6 +38,7 @@ KisanSahayak aims to simplify agricultural decision-making, reduce risks, and im
 - **Trusted User System:** Farmers and retailers are verified to maintain trust and transparency in the marketplace.
 - **Marketplace:** A platform for farmers to trade goods with each other or retailers, ensuring fair access to resources.
 - **Most Likely Disease Prediction:** AI-powered predictions on the most probable diseases affecting the crops in a specific farm.
+- **AI-powered AR Image Assistance:** While capturing crop photos, the app will use augmented reality (AR) to guide farmers on the optimal way to take the picture for disease detection.
 
 ## Technologies Used
 - **Backend:** Node JS
@@ -99,7 +100,6 @@ Our data is sourced from reliable datasets like IMD (India Meteorological Depart
 
 ## Future Work
 We are actively working on enhancing KisanSahayak by introducing:
-- **AI-powered AR Image Assistance:** While capturing crop photos, the app will use augmented reality (AR) to guide farmers on the optimal way to take the picture for disease detection.
 - **Hyperspectral Reflectance Method:** We are exploring hyperspectral imaging techniques to predict crop diseases more accurately, leveraging the reflectance properties of leaves and plants.
 - **Expanded Crop and Disease Prediction Models:** Building more robust models to predict diseases in a broader range of crops and environmental conditions.
 
@@ -121,5 +121,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Note:** This is a private repository, and we are not currently open to contributions. However, we will be happy to consider your ideas in the future. Stay tuned!
+**Note:** This is a public repository, and we are open to contributions.
 
