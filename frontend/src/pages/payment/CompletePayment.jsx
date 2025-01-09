@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
+import html2pdf from 'html2pdf.js';
 import useBuyItem from '../../hooks/useBuyItem';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useGetItemById from '../../hooks/useGetItemById';
 import Spinner from "../../components/Spinner";
 import Navbar from "../../components/navbars/Navbar-actions";
@@ -16,6 +17,7 @@ const CompletePayment = () => {
 	const { loading, product } = useGetItemById();
 	const [totalAmt, setTotalAmt] = useState();
 	const [buyData, setBuyData] = useState();
+	const invoiceRef = useRef();
 
 	const getProduct = async () => {
 		const queryParams = new URLSearchParams(location.search);
@@ -44,7 +46,26 @@ const CompletePayment = () => {
 		setBuyData(data);
 	}
 
-	console.log(buyData);
+	const downloadPDF = () => {
+		const tempElement = document.createElement('div');
+		const element = invoiceRef.current;
+		const additionalContent = `
+            <h2 class="text-xl font-semibold mb-4">Order Invoice</h2>
+            <div class="border-t border-gray-300 pt-4"></div>
+        `;
+
+		tempElement.innerHTML = additionalContent + element.innerHTML;
+
+		const options = {
+			margin: 1,
+			filename: `invoice_${paramsData.order_id}.pdf`,
+			image: { type: 'jpeg', quality: 0.98 },
+			html2canvas: { scale: 2 },
+			jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+		};
+
+		html2pdf().from(tempElement).set(options).save();
+	};
 
 	return (
 		<>
@@ -106,52 +127,61 @@ const CompletePayment = () => {
 							<h2 className="text-xl font-semibold mb-4">Order Invoice</h2>
 							<div className="border-t border-gray-300 pt-4">
 								<div className="text-sm space-y-2">
-									<img src={buyData.image_url} alt={buyData.product_id} className='w-full max-h-[300px] mb-2' />
+									<img src={buyData.image_url} alt={buyData.product_id} className="w-full max-h-[300px] mb-2" />
 
-									<div className='mb-2 flex flex-col gap-1'>
-										<span className='text-lg font-bold'>Product Details</span>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Product:</span>
-											<span> {buyData.product_name}</span>
+									<div ref={invoiceRef} className="invoice-content p-4 border rounded">
+										<div className="mb-2 flex flex-col gap-1">
+											<span className="text-lg font-bold">Product Details</span>
+											<div className="flex justify-between">
+												<span className="font-semibold">Product:</span>
+												<span>{buyData.product_name}</span>
+											</div>
+											<div className="flex justify-between">
+												<span className="font-semibold">Seller:</span>
+												<span>{buyData.seller_name}</span>
+											</div>
+											<div className="flex justify-between">
+												<span className="font-semibold">Seller Type:</span>
+												<span>{buyData.seller_type}</span>
+											</div>
 										</div>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Seller:</span>
-											<span>{buyData.seller_name}</span>
-										</div>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Seller Type:</span>
-											<span> {buyData.seller_type}</span>
-										</div>
-									</div>
 
-									<div className='mb-2 flex flex-col gap-1'>
-										<span className='text-lg font-bold'>Customer Details</span>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Name:</span>
-											<span> {buyData.customer_name}</span>
+										<div className="mb-2 flex flex-col gap-1">
+											<span className="text-lg font-bold">Customer Details</span>
+											<div className="flex justify-between">
+												<span className="font-semibold">Name:</span>
+												<span>{buyData.customer_name}</span>
+											</div>
+											<div className="flex justify-between">
+												<span className="font-semibold">Email:</span>
+												<span>{buyData.customer_email}</span>
+											</div>
+											<div className="flex justify-between">
+												<span className="font-semibold">Mobile No.:</span>
+												<span>{buyData.customer_mobile}</span>
+											</div>
+											<div className="flex justify-between">
+												<span className="font-semibold">Delivery:</span>
+												<span className="max-w-[150px] text-right">{buyData.delivery}</span>
+											</div>
 										</div>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Email:</span>
-											<span>{buyData.customer_email}</span>
-										</div>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Mobile No.:</span>
-											<span> {buyData.customer_mobile}</span>
-										</div>
-										<div className='flex justify-between'>
-											<span className='font-semibold'>Delivery:</span>
-											<span className='max-w-[150px] text-right'>{buyData.delivery}</span>
-										</div>
-									</div>
 
-									<div className="w-full h-px bg-gray-300 my-4"></div>
+										<div className="w-full h-px bg-gray-300 my-4"></div>
 
-									<div className="flex justify-between text-lg">
-										<span className="font-semibold">Total:</span>
-										<span>₹ {buyData.amount}</span>
+										<div className="flex justify-between text-lg">
+											<span className="font-semibold">Total:</span>
+											<span>₹ {buyData.amount}</span>
+										</div>
 									</div>
 								</div>
 							</div>
+
+							<button
+								onClick={downloadPDF}
+								className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+							>
+								Download PDF
+							</button>
 						</>
 					)}
 				</div>
